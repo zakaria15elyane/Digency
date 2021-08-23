@@ -47,6 +47,17 @@ public class RoleEntity implements Serializable {
 	public void setNomRole(String nomRole) {
 		this.nomRole = nomRole;
 	}
+
+	public RoleEntity(Long idRole, String nomRole) {
+		super();
+		this.idRole = idRole;
+		this.nomRole = nomRole;
+	}
+
+	public RoleEntity() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	
 	
 }

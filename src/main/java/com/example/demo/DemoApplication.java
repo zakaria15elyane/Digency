@@ -19,24 +19,28 @@ public class DemoApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
 	}
-	@Autowired(required = true)
+	@Autowired
 	private IUserRepository userRepository;
 	
-	@Autowired(required = true)
+	@Autowired
 	private IRoleRepository roleRepository;
 	
-	UserEntity u1=new UserEntity();
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
+	
 	@Override
 	public void run(String... args) throws Exception {
 		// TODO Auto-generated method stub
-		/*
-		 * u1.setIdUser(null); u1.setUsername("admin");
-		 * u1.setPassword(passwordEncoder.encode("admin"));
-		 */
+		RoleEntity r1=roleRepository.save(new RoleEntity(null,"admin"));
+			
+			UserEntity u1=new UserEntity();
+			u1.setIdUser(null);
+			u1.setUsername("admin");
+			u1.setPassword(passwordEncoder.encode("admin"));
+			u1.getRoles().add(r1);
+			userRepository.save(u1);
 		
-		
-		//RoleEntity R1 = roleRepository.save(new RoleEntity(null, "ADMIN"));
 	}
 
 	@Bean
