@@ -34,7 +34,7 @@ public class Security extends WebSecurityConfigurerAdapter {
 		http.csrf().disable();
 		http.headers().frameOptions().disable();
 		http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-		http.authorizeRequests().antMatchers("/h2-console/**", "/refreshToken/**").permitAll();
+		http.authorizeRequests().antMatchers("/h2-console/**","/refreshToken/**").permitAll();
 		http.authorizeRequests().anyRequest().authenticated();
 		http.addFilterBefore(new JwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
 		http.addFilter(new JwtAuthenticationFilter(authenticationManagerBean()));

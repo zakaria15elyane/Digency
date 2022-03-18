@@ -30,7 +30,7 @@ public class JwtAuthorizationFilter extends OncePerRequestFilter{
 		response.addHeader("Access-Control-Expose-Headers",
 				"Access-Control-Allow-Origin, Access-Control-Allow-Credentials, authorization");
 		response.addHeader("Access-Control-Allow-Methods", "GET, POST, DELETE, PUT, PATCH");
-		if (request.getMethod().equals("/login ")) {
+		if (request.getMethod().equals("/login ") && request.getMethod().equals("/refreshToken") ) {
 			filterChain.doFilter(request, response);
 		} else if (request.getMethod().equals("OPTIONS")) {
 			response.setStatus(HttpServletResponse.SC_OK);
