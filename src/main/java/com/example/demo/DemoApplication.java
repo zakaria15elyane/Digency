@@ -47,4 +47,10 @@ public class DemoApplication implements CommandLineRunner {
 	PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
+	//gvuygvuygvbuyvyuv
+	//tufyggiugiugiugui
+	//gvuygvuygvbuyvyuv
+	//tufyggiugiugiugui
+	//gvuygvuygvbuyvyuv
+	//tufyggiugiugiugui
 }
